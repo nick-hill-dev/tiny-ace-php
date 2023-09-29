@@ -1,0 +1,9 @@
+{
+    "version": 1,
+    "files": [
+        {
+            "from": "AzureEmailApiClient.class.php",
+            "to": "AzureEmailApiClient.class.php"
+        }
+    ]
+}
