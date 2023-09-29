@@ -44,9 +44,8 @@ class AzureEmailApiClient {
 		$body = [
 			"senderAddress" => $this->senderAddress,
 			"content" => [
-				"subject" => $details['subject'],
-				"plainText" => $details['content']
-			],
+				"subject" => $details['subject']
+            ],
 			"recipients" => [],
 			"replyTo" => [
 				[
@@ -56,6 +55,14 @@ class AzureEmailApiClient {
 			]
 		];
 		
+        if (isset($details['plainContent'])) {
+            $body['content']['plainText'] = $details['plainContent'];
+        }
+		
+        if (isset($details['htmlContent'])) {
+            $body['content']['html'] = $details['htmlContent'];
+        }
+
 		$body['recipients']['to'] = [];
 		foreach ($details['to'] as $to) {
 			$body['recipients']['to'][] = [
