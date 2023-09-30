@@ -3,6 +3,8 @@
 class AzureEmailApiClient {
 	
 	private $azureResourceName = 'unknown';
+
+	private $azureRegion = 'uk';
 	
 	private $accessKey = 'unknown';
 	
@@ -20,6 +22,10 @@ class AzureEmailApiClient {
 		
 		if (isset($details['azureResourceName'])) {
 			$this->azureResourceName = $details['azureResourceName'];
+		}
+		
+		if (isset($details['azureRegion'])) {
+			$this->region = $details['azureRegion'];
 		}
 		
 		if (isset($details['accessKey'])) {
@@ -76,7 +82,7 @@ class AzureEmailApiClient {
 		$contentHash = base64_encode(hash('sha256', $bodyJson, true));
 
 		$verb = 'POST';
-		$authority = $this->azureResourceName.'.uk.communication.azure.com';
+		$authority = $this->azureResourceName.'.'.$this->azureRegion.'.communication.azure.com';
 		$pathAndQuery = 'emails:send?api-version=2023-03-31';
 		$fullUrl = "https://$authority/$pathAndQuery";
 		$timestamp = gmdate('D, d M Y H:i:s \G\M\T', time());
