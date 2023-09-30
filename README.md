@@ -39,4 +39,4 @@ $mailer->sendEmail([
 
 ## License
 
-The WebSocket Relay client was written by Nick Hill and is released under the MIT license. See LICENSE for more information.
+The Azure Email API client was written by Nick Hill and is released under the MIT license. See LICENSE for more information.
