@@ -7,8 +7,8 @@ The Azure Email API Client is a single, tiny PHP class file which allows sending
 ## Quick Start
 
 1. Upload the file to your website.
-1. Construct an instance of the `AzureEmailApiClient`` class with various configuration options.
-1. Call the `sendEmail`` method to send emails via Azure.
+1. Construct an instance of the `AzureEmailApiClient` class with various configuration options.
+1. Call the `sendEmail` method to send emails via Azure.
 
 ## Example
 
